@@ -1,2 +1,3 @@
-# advanced_react_redux
-Full implementation based on Stephen Greider's advanced React/Redux course.
+# AdvancedReduxCode
+
+Code repository for an awesome course on React and Redux.  See [here](https://www.udemy.com/react-redux-tutorial)
