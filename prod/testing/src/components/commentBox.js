@@ -1,15 +1,35 @@
 import React from "react";
 
 export default class CommentBox extends React.Component {
+  state = {comment: ""};
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <h4>Add a comment</h4>
-        <textarea />
+        <textarea
+          value={this.state.comment}
+          onChange={this.handleChange}
+        />
         <div>
           <button>Submit comment</button>
         </div>
       </form>
     );
   }
+
+  handleChange = event => {
+    this.setState({comment: event.target.value});
+  };
+
+  handleSubmit = event => {
+    // prevent page from reloading
+    event.preventDefault();
+
+    // call action creator
+    // save comment by user
+
+    // empty out text area
+    this.setState({comment: ""});
+  };
 };
