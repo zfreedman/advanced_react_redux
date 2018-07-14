@@ -2,10 +2,11 @@ import React from "react";
 // import ReactDOM from "react-dom";
 import { shallow } from "enzyme";
 
-import App from "../app";
-import CommentBox from "../commentBox";
+import App from "components/app";
+import CommentBox from "components/commentBox";
+import CommentList from "components/commentList";
 
-it("shows a comment box", () => {
+it ("shows a comment box", () => {
   // without enzyme
   // const div = document.createElement("div");
   // ReactDOM.render(<App />, div);
@@ -15,4 +16,9 @@ it("shows a comment box", () => {
   // with enzyme
   const wrapped = shallow(<App />);
   expect(wrapped.find(CommentBox).length).toEqual(1);
+});
+
+it ("shows a comment list", () => {
+  const wrapped = shallow(<App />);
+  expect(wrapped.find(CommentList).length).toEqual(1);
 });
