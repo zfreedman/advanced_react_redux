@@ -1,6 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
+import * as actions from "actions";
 
-export default class CommentBox extends React.Component {
+class CommentBox extends React.Component {
   state = {comment: ""};
 
   render() {
@@ -28,8 +30,11 @@ export default class CommentBox extends React.Component {
 
     // call action creator
     // save comment by user
+    this.props.saveComment(this.state.comment);
 
     // empty out text area
     this.setState({comment: ""});
   };
 };
+
+export default connect(null, actions)(CommentBox);
