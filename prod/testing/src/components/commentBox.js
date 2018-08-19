@@ -31,6 +31,20 @@ class CommentBox extends React.Component {
     );
   }
 
+  componentDidMount () {
+    this.handleUnauthenticated();
+  }
+
+  componentDidUpdate () {
+    this.handleUnauthenticated();
+  }
+
+  handleUnauthenticated () {
+    if (!this.props.auth) {
+      this.props.history.push("/");
+    }
+  }
+
   handleChange = event => {
     this.setState({comment: event.target.value});
   };
@@ -52,4 +66,6 @@ class CommentBox extends React.Component {
   };
 };
 
-export default connect(null, actions)(CommentBox);
+let mapStateToProps = ({ auth }) => ({ auth });
+
+export default connect(mapStateToProps, actions)(CommentBox);
