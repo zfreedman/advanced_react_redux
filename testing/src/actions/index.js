@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { SAVE_COMMENT, FETCH_COMMENTS, CHANGE_AUTH } from 'actions/types';
 
-export function saveComment(comment) {
+export function changeAuth(isLoggedIn) {
   return {
-    type: SAVE_COMMENT,
-    payload: comment
+    type: CHANGE_AUTH,
+    payload: isLoggedIn
   };
 }
 
@@ -17,9 +17,9 @@ export function fetchComments() {
   };
 }
 
-export function changeAuth(isLoggedIn) {
+export function saveComment(comment) {
   return {
-    type: CHANGE_AUTH,
-    payload: isLoggedIn
+    type: SAVE_COMMENT,
+    payload: comment
   };
 }
