@@ -5,8 +5,10 @@ import {
   SAVE_COMMENT
 } from "actions/types";
 
+export const API_URL = "http://jsonplaceholder.typicode.com/comments";
+
 export function fetchComments () {
-  const response = axios.get("http://jsonplaceholder.typicode.com/comments");
+  const response = axios.get(API_URL);
 
   return {
     type: FETCH_COMMENTS,
