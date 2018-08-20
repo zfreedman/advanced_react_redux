@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 export default ChildComponent => {
   class ComposedComponent extends React.Component {
     render () {
-      return <ChildComponent />;
+      return <ChildComponent {...this.props} />;
     }
 
     componentDidMount () {
