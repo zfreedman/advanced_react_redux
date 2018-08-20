@@ -66,6 +66,4 @@ class CommentBox extends React.Component {
   };
 };
 
-let mapStateToProps = ({ auth }) => ({ auth });
-
-export default connect(mapStateToProps, actions)(CommentBox);
+export default connect(null, actions)(CommentBox);
